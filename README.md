@@ -4,8 +4,13 @@ Terminal Library for Linux
 ## Purpose
 This is designed as a library to handle input/output for a TTY device on Linux.
 
+## Compiling
+Use `make` to compile this library, which will create a static library that is easy to include. GwTerm does not currently support being compiled as a shared library, but that may change in the future.
+
 ## Usage
-First step is to include the `term.h` header. Then, all that is needed is to call the function `char* gwtTermRead(const char* prompt)`. This will return the line read after the Enter key is pressed in the terminal. Before getting input, it will display the value passed in the `const char* prompt` variable.
+First step is to include the `term.h` header. Then, all that is needed is to call the function `char* gwtTermRead(const char* prompt)`. This will return the line read after the Enter key is pressed in the terminal, or NULL if there is an error or a stopping signal. Before getting input, it will display the value passed in the `const char* prompt` variable.
+
+To compile against it, just add the libgwterm.a static library.
 
 ## Signals
 This library can also handle the following signals:
