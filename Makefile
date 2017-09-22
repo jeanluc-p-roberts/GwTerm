@@ -1,7 +1,7 @@
 _SRC=term.c signal.c
 OBJS=$(_SRC:%.c=%.o)
-CFLAG:S=-Wall
-CC:=gcc
+CFLAGS?=-Wall
+CC?=gcc
 
 all: libgwterm.a
 
